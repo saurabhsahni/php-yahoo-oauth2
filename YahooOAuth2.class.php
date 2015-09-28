@@ -14,7 +14,7 @@ class YahooOAuth2 {
         $curl = curl_init($url); 
 	if($postdata) {
             curl_setopt($curl, CURLOPT_POST, true); 
-	    curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
+	    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($postdata));
 	} 
 	else {
 	    curl_setopt($curl, CURLOPT_POST, false);
